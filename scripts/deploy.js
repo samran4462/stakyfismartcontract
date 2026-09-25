@@ -26,7 +26,7 @@ async function main() {
 
     // 2. Deploy RewardToken.sol
     const RewardToken = await hre.ethers.getContractFactory("RewardToken");
-    const rewardToken = await RewardToken.deploy("Staking Reward", "STAKY", hre.ethers.parseEther("10000000"));
+    const rewardToken = await RewardToken.deploy("AURA", "AURA", hre.ethers.parseEther("10000000"));
     await rewardToken.waitForDeployment();
     const tokenAddress = await rewardToken.getAddress();
     console.log("RewardToken deployed to:", tokenAddress);
